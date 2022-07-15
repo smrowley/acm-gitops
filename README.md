@@ -84,17 +84,17 @@
     apiVersion: argoproj.io/v1alpha1
     kind: ApplicationSet
     metadata:
-    name: sample
-    namespace: openshift-gitops
+      name: sample
+      namespace: openshift-gitops
     spec:
-    generators:
+      generators:
         - clusterDecisionResource:
             configMapRef: acm-placement
             labelSelector:
             matchLabels:
                 cluster.open-cluster-management.io/placement: sample
             requeueAfterSeconds: 180
-    template:
+      template:
         metadata:
         name: 'sample-{{name}}'
         spec:
